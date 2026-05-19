@@ -1,9 +1,0 @@
-Install.packages(“party”)
-Library(party)
-Str(iris)
-new_iris <- iris
-new_iris$Species <- NULL kc <- kmeans(new_iris, 3)
-table(iris$Species, kc$cluster)\
-
-plot(new_iris[c("Sepal.Length", "Sepal.Width")], col = kc$cluster)
-points(kc$centers[, c("Sepal.Length", "Sepal.Width")], col = 1:3, pch = 8, cex= 2)
