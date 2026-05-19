@@ -1,0 +1,13 @@
+dataset <- read.csv(file.choose(), header = T)
+head(dataset)
+nrow(dataset)
+install.packages("caTools") 
+library(caTools)
+split <- sample.split(dataset, SplitRatio = 0.75) 
+training_set <- subset(dataset, split == “TRUE”) 
+test_set <- subset(dataset, split == “FALSE”)
+fit_MRegressor_model <- lm(formula = admit ~ gre+gpa+rank, data = training_set)
+predict_set <- predict(fit_MRegressor_model, newdata = test_set) predict_set
+cdplot(as.factor(admit) ~ gpa, data = dataset) 
+cdplot(as.factor(admit) ~ gre, data = dataset)
+cdplot(as.factor(admit) ~ rank, data = dataset)
