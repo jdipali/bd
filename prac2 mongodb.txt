@@ -1,0 +1,8 @@
+import pymongo
+from pymongo import MongoClient
+client = pymongo.MongoClient("<Connection_string>") 
+db = client.get_database('<Database_name>')
+records = db.<Collection_name> 
+db = client.test 
+print(records.count_documents({})) 
+print(list(records.find()))
